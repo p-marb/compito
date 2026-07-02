@@ -794,7 +794,7 @@
     <header class="topbar panel">
       <div class="brand">
         <span class="prompt">compito:~$</span>
-        <span class="title">task planner</span>
+        <span class="title">personal task planner</span>
         <span class="cursor">█</span>
       </div>
 
@@ -856,7 +856,7 @@
             <p>drag cards between columns</p>
             <p>autosaves to localStorage</p>
             <p>export json if it matters</p>
-            <p>task background = category color</p>
+            <p>personal task planner</p>
           </div>
         </section>
       </aside>
@@ -1019,17 +1019,17 @@
         projects: [
           {
             id: projectId,
-            name: "prototype",
+            name: "example project",
             categories: [
-              { id: generalId, name: "general", color: "#b8bb26" },
+              { id: generalId, name: "general", color: "#83a598" },
               { id: bugId, name: "bug", color: "#fb4934" },
               { id: buildId, name: "build", color: "#fabd2f" }
             ],
             tasks: [
               {
                 id: makeId(),
-                title: "make the smallest useful version",
-                description: "no fake polish. just the board, save/load, and editing.",
+                title: "this is a todo",
+                description: "you can drag and drop this to other categories (e.g., [doing] or [done])",
                 categoryId: generalId,
                 dueDate: "",
                 status: "todo",
@@ -1037,12 +1037,21 @@
               },
               {
                 id: makeId(),
-                title: "keep ui terminal-like",
-                description: "boxes, compact spacing, simple colors, no cyber glow garbage.",
+                title: "in progress example",
+                description: "this task is in progress, also it has a different category (build)",
                 categoryId: buildId,
                 dueDate: "",
                 status: "doing",
                 createdAt: Date.now() + 1
+              },
+              {
+                id: makeId(),
+                title: "complete example",
+                description: "this is an example of a task that is completed. congrats!",
+                categoryId: bugId,
+                dueDate: "",
+                status: "done",
+                createdAt: Date.now() + 2
               }
             ]
           }
@@ -1071,7 +1080,7 @@
         project.id ??= makeId();
         project.name ??= "untitled";
         project.categories ??= [
-          { id: makeId(), name: "general", color: "#b8bb26" }
+          { id: makeId(), name: "general", color: "#83a598" }
         ];
         project.tasks ??= [];
 
@@ -1348,7 +1357,7 @@
         id: makeId(),
         name,
         categories: [
-          { id: categoryId, name: "general", color: "#b8bb26" }
+          { id: categoryId, name: "general", color: "#83a598" }
         ],
         tasks: []
       };
