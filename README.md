@@ -10,6 +10,11 @@ An open source, free personal task planner. Minimal design to streaminline produ
 [<img src="https://raw.githubusercontent.com/p-marb/compito/refs/heads/main/scr2.png">]()
 [<img src="https://raw.githubusercontent.com/p-marb/compito/refs/heads/main/scr3.png">]()
 
+## How to Use
+1) Clone this repository
+2) Open preview.html
+3) Done!
+
 ## Planned Features
 
 - More themes + user custom themes
