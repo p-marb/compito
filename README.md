@@ -8,6 +8,7 @@ An open source, free personal task planner. Minimal design to streaminline produ
 ## Screenshots
 [<img src="https://raw.githubusercontent.com/p-marb/compito/refs/heads/main/scr1.png">]()
 [<img src="https://raw.githubusercontent.com/p-marb/compito/refs/heads/main/scr2.png">]()
+[<img src="https://raw.githubusercontent.com/p-marb/compito/refs/heads/main/scr3.png">]()
 
 ## Planned Features
 
