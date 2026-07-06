@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-webtui-theme="gruvbox-dark-hard">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +12,10 @@
     @import "https://cdn.jsdelivr.net/npm/@webtui/theme-gruvbox@latest/dist/index.css";
     @import "https://cdn.jsdelivr.net/npm/@webtui/theme-nord@latest/dist/index.css";
     @import "https://cdn.jsdelivr.net/npm/@webtui/theme-catppuccin@latest/dist/index.css";
-  
+    @import "https://cdn.jsdelivr.net/npm/@webtui/theme-everforest@latest/dist/index.css";
+    @import "https://cdn.jsdelivr.net/npm/@webtui/theme-osmium@latest/dist/index.css";
+    @import "https://cdn.jsdelivr.net/npm/@webtui/theme-vitesse@latest/dist/index.css";
+
     :root {
       --font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       --gap: 12px;
@@ -22,11 +26,11 @@
       --blue: #83a598;
       --line: var(--foreground2);
     }
-  
+
     * {
       box-sizing: border-box;
     }
-  
+
     html,
     body {
       margin: 0;
@@ -35,20 +39,20 @@
       background: var(--background0);
       color: var(--foreground0);
     }
-  
+
     body {
       overflow: hidden;
       font-size: 14px;
       line-height: 1.35;
     }
-  
+
     button,
     input,
     select,
     textarea {
       font: inherit;
     }
-  
+
     input,
     select,
     textarea {
@@ -61,19 +65,19 @@
       padding: 6px 8px;
       outline: none;
     }
-  
+
     textarea {
       height: auto;
       min-height: 120px;
       resize: vertical;
     }
-  
+
     input:focus,
     select:focus,
     textarea:focus {
       border-color: var(--foreground0);
     }
-  
+
     input[type="color"] {
       width: 58px;
       min-width: 58px;
@@ -81,26 +85,26 @@
       padding: 2px;
       cursor: pointer;
     }
-  
+
     button {
       appearance: none !important;
       -webkit-appearance: none !important;
-  
+
       height: 16px;
       min-height: 16px;
       max-height: 16px;
-  
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
-  
+
       padding: 0 12px;
       margin: 0;
-  
+
       cursor: pointer;
       text-transform: lowercase;
       white-space: nowrap;
-  
+
       color: var(--background0);
       background: var(--foreground0);
       border: 1px solid var(--foreground0);
@@ -108,17 +112,17 @@
       box-shadow: none !important;
       text-shadow: none !important;
     }
-  
+
     button:hover {
       background: var(--foreground1);
       border-color: var(--foreground1);
     }
-  
+
     button::before,
     button::after {
       content: none !important;
     }
-  
+
     .shell {
       height: 100vh;
       display: grid;
@@ -133,13 +137,13 @@
           transparent 24px),
         var(--background0);
     }
-  
+
     .panel {
       border: 1px solid var(--line);
       background: color-mix(in srgb, var(--background0), var(--background1) 16%);
       overflow: hidden;
     }
-  
+
     .topbar {
       min-height: 74px;
       padding: 10px;
@@ -148,7 +152,7 @@
       gap: 12px;
       align-items: center;
     }
-  
+
     .brand {
       display: flex;
       align-items: center;
@@ -156,60 +160,60 @@
       min-width: 0;
       overflow: hidden;
     }
-  
+
     .prompt {
       color: var(--foreground1);
       white-space: nowrap;
     }
-  
+
     .title {
       color: var(--foreground0);
       font-weight: 700;
       white-space: nowrap;
     }
-  
+
     .cursor {
       display: inline-block;
       width: 1ch;
       color: var(--foreground0);
       animation: blink 1s steps(1) infinite;
     }
-  
+
     @keyframes blink {
       50% {
         opacity: 0;
       }
     }
-  
+
     .top-actions {
       display: flex;
       gap: 10px;
       align-items: center;
       justify-content: flex-end;
     }
-  
+
     .top-actions select {
       width: 230px;
     }
-  
+
     .app {
       min-height: 0;
       display: grid;
       grid-template-columns: 330px minmax(0, 1fr);
       gap: var(--gap);
     }
-  
+
     aside,
     main {
       min-height: 0;
       overflow: auto;
       padding: 10px;
     }
-  
+
     .section {
       margin-bottom: 20px;
     }
-  
+
     .label-line {
       display: flex;
       justify-content: space-between;
@@ -218,91 +222,91 @@
       margin-bottom: 8px;
       color: var(--foreground1);
     }
-  
+
     .label-line::before {
       content: "::";
       color: var(--foreground2);
     }
-  
+
     .row {
       display: flex;
       gap: 8px;
       align-items: center;
       min-width: 0;
     }
-  
+
     .row+.row {
       margin-top: 8px;
     }
-  
+
     .stack {
       display: grid;
       gap: 8px;
     }
-  
+
     .mt {
       margin-top: 8px;
     }
-  
+
     .project-item {
-  height: 36px;
-  display: grid;
-  grid-template-columns: 2ch minmax(0, 1fr) auto;
-  gap: 8px;
-  align-items: center;
-  padding: 0 8px;
-  border: 1px solid var(--line);
-  cursor: pointer;
-  color: var(--foreground1);
-  background: var(--background0);
-}
+      height: 36px;
+      display: grid;
+      grid-template-columns: 2ch minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: center;
+      padding: 0 8px;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      color: var(--foreground1);
+      background: var(--background0);
+    }
 
-#projectList {
-  max-height: 124px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-right: 4px;
+    #projectList {
+      max-height: 124px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 4px;
 
-  scrollbar-width: thin;
-  scrollbar-color: var(--foreground2) var(--background0);
-}
+      scrollbar-width: thin;
+      scrollbar-color: var(--foreground2) var(--background0);
+    }
 
-#projectList::-webkit-scrollbar {
-  width: 8px;
-}
+    #projectList::-webkit-scrollbar {
+      width: 8px;
+    }
 
-#projectList::-webkit-scrollbar-track {
-  background: var(--background0);
-}
+    #projectList::-webkit-scrollbar-track {
+      background: var(--background0);
+    }
 
-#projectList::-webkit-scrollbar-thumb {
-  background: var(--foreground2);
-}
-  
+    #projectList::-webkit-scrollbar-thumb {
+      background: var(--foreground2);
+    }
+
     .project-item:hover,
     .project-item.active {
       color: var(--foreground0);
       background: var(--background1);
     }
-  
+
     .project-item.active {
       border-color: var(--foreground0);
     }
-  
+
     .project-item.active .project-marker {
       color: var(--ok);
     }
-  
+
     .project-name {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-  
+
     .project-count {
       color: var(--foreground2);
     }
-  
+
     .category-item {
       height: 44px;
       display: grid;
@@ -313,7 +317,7 @@
       border: 1px solid var(--line);
       background: var(--background0);
     }
-  
+
     .color-chip {
       width: 20px;
       height: 20px;
@@ -337,53 +341,53 @@
     .color-preset.active {
       border: 2px solid var(--foreground0);
     }
-  
+
     .category-name {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
       font-weight: 700;
     }
-  
+
     .delete-mini {
       width: 42px !important;
       min-width: 42px !important;
       max-width: 42px !important;
-  
+
       height: 28px !important;
       min-height: 28px !important;
       max-height: 28px !important;
-  
+
       padding: 0 !important;
       margin: 0 !important;
-  
+
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-  
+
       color: var(--foreground0) !important;
       background: var(--danger) !important;
       border: 1px solid var(--danger) !important;
       line-height: 1 !important;
     }
-  
+
     .terminal-note {
       padding: 10px;
       color: var(--foreground1);
       border: 1px solid var(--line);
       background: var(--background0);
     }
-  
+
     .terminal-note p {
       margin: 0;
       overflow-wrap: anywhere;
     }
-  
+
     .terminal-note p::before {
       content: "# ";
       color: var(--foreground2);
     }
-  
+
     .board-header {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -391,7 +395,7 @@
       align-items: end;
       margin-bottom: 12px;
     }
-  
+
     .project-title {
       font-size: 16px;
       font-weight: 700;
@@ -400,45 +404,45 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-  
+
     .project-title::before {
       content: "/project/";
       color: var(--foreground2);
       font-weight: 400;
     }
-  
+
     .command-row {
       display: grid;
       grid-template-columns: minmax(220px, 1fr) 180px 150px auto auto;
       gap: 8px;
       margin-bottom: 12px;
     }
-  
+
     .columns {
       min-width: 920px;
       display: grid;
       grid-template-columns: repeat(3, minmax(280px, 1fr));
       gap: 12px;
     }
-  
-.column {
-  height: calc(100vh - 255px);
-  min-height: 0;
 
-  padding: 10px;
-  border: 1px solid var(--line);
-  background: var(--background0);
+    .column {
+      height: calc(100vh - 255px);
+      min-height: 0;
 
-  display: flex;
-  flex-direction: column;
-}
-  
+      padding: 10px;
+      border: 1px solid var(--line);
+      background: var(--background0);
+
+      display: flex;
+      flex-direction: column;
+    }
+
     .column.drag-over {
       background: var(--background1);
       outline: 1px dashed var(--foreground0);
       outline-offset: -6px;
     }
-  
+
     .column-title {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -447,33 +451,33 @@
       color: var(--foreground1);
       font-weight: 700;
     }
-  
+
     .column-title span:first-child::before {
       content: "[";
       color: var(--foreground2);
     }
-  
+
     .column-title span:first-child::after {
       content: "]";
       color: var(--foreground2);
     }
-  
-   .task-list {
-  flex: 1 1 auto;
-  min-height: 0;
 
-  display: block;
+    .task-list {
+      flex: 1 1 auto;
+      min-height: 0;
 
-  overflow-y: auto;
-  overflow-x: hidden;
+      display: block;
 
-  padding-right: 4px;
+      overflow-y: auto;
+      overflow-x: hidden;
 
-  scrollbar-width: thin;
-  scrollbar-color: var(--foreground2) var(--background0);
-}
-  
-   .task-card {
+      padding-right: 4px;
+
+      scrollbar-width: thin;
+      scrollbar-color: var(--foreground2) var(--background0);
+    }
+
+    .task-card {
       --cat-color: var(--foreground2);
       --cat-border: color-mix(in srgb, var(--cat-color), var(--foreground0) 20%);
       --dither-url: none;
@@ -514,25 +518,25 @@
     }
 
     .task-card:hover {
-  background: color-mix(in srgb, var(--cat-color) 5%, var(--background0));
-}
-      
+      background: color-mix(in srgb, var(--cat-color) 5%, var(--background0));
+    }
+
     .task-card.dragging {
       opacity: 0.45;
     }
-  
+
     .task-title {
       color: var(--foreground0);
       font-weight: 700;
       margin-bottom: 6px;
       word-break: break-word;
     }
-  
+
     .task-title::before {
       content: "- ";
       color: var(--cat-color);
     }
-  
+
     .task-desc {
       color: var(--foreground1);
       white-space: pre-wrap;
@@ -541,7 +545,7 @@
       border-left: 1px solid var(--cat-color);
       overflow-wrap: anywhere;
     }
-  
+
     .task-meta {
       display: flex;
       justify-content: space-between;
@@ -549,7 +553,7 @@
       flex-wrap: wrap;
       margin-bottom: 8px;
     }
-  
+
     .tag {
       display: inline-block;
       color: var(--background0);
@@ -557,21 +561,25 @@
       padding: 1px 8px;
       font-weight: 700;
     }
-  
+
     .due {
       color: var(--foreground2);
     }
-  
+
     .due::before {
       content: "due:";
       color: var(--foreground1);
     }
-  
+
     .due.overdue {
       color: var(--danger);
       font-weight: 700;
     }
-  
+
+    .due-date {
+      font-style: italic;
+    }
+
     .task-actions {
       display: flex;
       flex-wrap: wrap;
@@ -579,33 +587,33 @@
       gap: 6px;
       margin-top: 8px;
     }
-  
+
     .task-actions button {
       height: 16px !important;
       min-height: 16px !important;
       max-height: 16px !important;
-  
+
       padding: 0 8px !important;
       margin: 0 !important;
-  
+
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-  
+
       color: var(--background0) !important;
       background: var(--foreground0) !important;
       border: 1px solid var(--foreground0) !important;
-  
+
       line-height: 1 !important;
       box-sizing: border-box !important;
     }
-  
+
     .task-actions button.danger {
       color: var(--foreground0) !important;
       background: var(--danger) !important;
       border: 1px solid var(--danger) !important;
     }
-  
+
     .empty {
       color: var(--foreground2);
       padding: 10px;
@@ -613,11 +621,11 @@
       border: 1px solid var(--line);
       background: var(--background0);
     }
-  
+
     .empty::before {
       content: "<empty> ";
     }
-  
+
     .dialog {
       position: fixed;
       inset: 0;
@@ -628,37 +636,37 @@
       padding: 24px;
       background: color-mix(in srgb, var(--background0), transparent 8%);
     }
-  
+
     .dialog.open {
       display: flex;
     }
-  
+
     .dialog-card {
       width: min(760px, 100%);
       padding: 12px;
       border: 1px solid var(--foreground0);
       background: var(--background0);
     }
-  
+
     .dialog-title {
       margin-bottom: 12px;
       color: var(--foreground0);
       font-weight: 700;
     }
-  
+
     .dialog-title::before {
       content: "$ edit ";
       color: var(--foreground2);
       font-weight: 400;
     }
-  
+
     .dialog-actions {
       display: flex;
       justify-content: flex-end;
       gap: 8px;
       margin-top: 12px;
     }
-  
+
     .statusbar {
       min-height: 28px;
       padding: 4px 8px;
@@ -668,124 +676,124 @@
       align-items: center;
       color: var(--foreground1);
     }
-  
+
     .statusbar span {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-  
+
     .hidden {
       display: none;
     }
-  
+
     .danger {
       color: var(--danger);
       border-color: var(--danger);
     }
-  
+
     ::selection {
       background: var(--foreground0);
       color: var(--background0);
     }
-  
+
     @media (max-width: 900px) {
       body {
         overflow: auto;
       }
-  
+
       .shell {
         height: auto;
         min-height: 100vh;
       }
-  
+
       .topbar {
         grid-template-columns: 1fr;
       }
-  
+
       .top-actions {
         justify-content: flex-start;
       }
-  
+
       .top-actions select {
         width: 100%;
       }
-  
+
       .app {
         grid-template-columns: 1fr;
       }
-  
+
       .command-row {
         grid-template-columns: 1fr;
       }
-  
+
       .columns {
         min-width: 0;
         grid-template-columns: 1fr;
       }
-  
+
       .column {
         min-height: 280px;
       }
     }
 
     .project-switch {
-  width: 100%;
-  height: auto;
-  min-height: 0;
-  max-height: none;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      max-height: none;
 
-  padding: 0;
-  margin: 0;
+      padding: 0;
+      margin: 0;
 
-  display: inline-block;
-  text-align: left;
+      display: inline-block;
+      text-align: left;
 
-  color: var(--foreground0);
-  background: transparent;
-  border: 0;
+      color: var(--foreground0);
+      background: transparent;
+      border: 0;
 
-  font-weight: 700;
-  cursor: pointer;
-}
+      font-weight: 700;
+      cursor: pointer;
+    }
 
-.project-switch:hover,
-.project-switch.switching {
-  color: var(--ok);
-  background: transparent;
-}
+    .project-switch:hover,
+    .project-switch.switching {
+      color: var(--ok);
+      background: transparent;
+    }
 
-.project-switch::before {
-  content: "← /project/" !important;
-  color: var(--foreground2);
-  font-weight: 400;
-}
+    .project-switch::before {
+      content: "← /project/" !important;
+      color: var(--foreground2);
+      font-weight: 400;
+    }
 
-.project-switch::after {
-  content: " →" !important;
-  color: var(--foreground2);
-  font-weight: 400;
-}
+    .project-switch::after {
+      content: " →" !important;
+      color: var(--foreground2);
+      font-weight: 400;
+    }
 
-.project-switch.switching::after {
-  content: " → input:" !important;
-  color: var(--warn);
-}
+    .project-switch.switching::after {
+      content: " → input:" !important;
+      color: var(--warn);
+    }
 
-.status-flash {
-  color: var(--ok);
-  animation: statusFlash 650ms steps(2, end);
-}
+    .status-flash {
+      color: var(--ok);
+      animation: statusFlash 650ms steps(2, end);
+    }
 
-@keyframes statusFlash {
-  0% {
-    color: var(--warn);
-  }
+    @keyframes statusFlash {
+      0% {
+        color: var(--warn);
+      }
 
-  100% {
-    color: var(--ok);
-  }
-}
+      100% {
+        color: var(--ok);
+      }
+    }
   </style>
 </head>
 
@@ -804,6 +812,9 @@
           <option value="gruvbox-dark-hard">gruvbox</option>
           <option value="nord">nord</option>
           <option value="catppuccin-mocha">catppuccin</option>
+          <option value="everforest">everforest</option>
+          <option value="osmium">osmium</option>
+          <option value="vitesse">vitesse</option>
         </select>
 
         <button onclick="exportData()">export</button>
@@ -868,7 +879,8 @@
               <span>current</span>
             </div>
 
-            <button id="currentProjectTitle" class="project-title project-switch" onclick="activateProjectSwitch()"></button>
+            <button id="currentProjectTitle" class="project-title project-switch"
+              onclick="activateProjectSwitch()"></button>
           </div>
 
           <button class="danger" onclick="deleteCurrentProject()">delete_project</button>
@@ -960,43 +972,43 @@
     const STORAGE_KEY = "taskforge_webtui_terminal_v3";
 
     const CATEGORY_COLORS = [
-        "#b8bb26", // green
-        "#fb4934", // red
-        "#fabd2f", // yellow
-        "#83a598", // blue
-        "#d3869b", // pink
-        "#8ec07c", // aqua
-        "#fe8019", // orange
-        "#928374"  // gray
-      ];
+      "#b8bb26", // green
+      "#fb4934", // red
+      "#fabd2f", // yellow
+      "#83a598", // blue
+      "#d3869b", // pink
+      "#8ec07c", // aqua
+      "#fe8019", // orange
+      "#928374"  // gray
+    ];
 
-      let projectSwitchActive = false;
-        let projectNumberBuffer = "";
+    let projectSwitchActive = false;
+    let projectNumberBuffer = "";
 
-      function renderColorPresets() {
-          const wrap = document.getElementById("categoryColorPresets");
-          const input = document.getElementById("categoryColor");
+    function renderColorPresets() {
+      const wrap = document.getElementById("categoryColorPresets");
+      const input = document.getElementById("categoryColor");
 
-          wrap.innerHTML = "";
+      wrap.innerHTML = "";
 
-          CATEGORY_COLORS.forEach(color => {
-            const button = document.createElement("button");
-            button.type = "button";
-            button.className = "color-preset";
-            button.style.setProperty("--preset-color", color);
+      CATEGORY_COLORS.forEach(color => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "color-preset";
+        button.style.setProperty("--preset-color", color);
 
-            if (input.value === color) {
-              button.classList.add("active");
-            }
-
-            button.onclick = () => {
-              input.value = color;
-              renderColorPresets();
-            };
-
-            wrap.appendChild(button);
-          });
+        if (input.value === color) {
+          button.classList.add("active");
         }
+
+        button.onclick = () => {
+          input.value = color;
+          renderColorPresets();
+        };
+
+        wrap.appendChild(button);
+      });
+    }
 
     let state = loadState();
     let editingTaskId = null;
@@ -1128,16 +1140,16 @@
     }
 
     function setStatus(message) {
-        const left = document.getElementById("statusLeft");
-        const right = document.getElementById("statusRight");
+      const left = document.getElementById("statusLeft");
+      const right = document.getElementById("statusRight");
 
-        left.textContent = message;
-        right.textContent = new Date().toLocaleTimeString();
+      left.textContent = message;
+      right.textContent = new Date().toLocaleTimeString();
 
-        left.classList.remove("status-flash");
-        void left.offsetWidth;
-        left.classList.add("status-flash");
-      }
+      left.classList.remove("status-flash");
+      void left.offsetWidth;
+      left.classList.add("status-flash");
+    }
 
     function render() {
       saveState();
@@ -1161,32 +1173,32 @@
     }
 
     function renderProjects() {
-        const projectList = document.getElementById("projectList");
-        projectList.innerHTML = "";
+      const projectList = document.getElementById("projectList");
+      projectList.innerHTML = "";
 
-        state.projects.forEach(project => {
-          const item = document.createElement("div");
-          item.className = "project-item";
+      state.projects.forEach(project => {
+        const item = document.createElement("div");
+        item.className = "project-item";
 
-          if (project.id === state.activeProjectId) {
-            item.classList.add("active");
-          }
+        if (project.id === state.activeProjectId) {
+          item.classList.add("active");
+        }
 
-          item.innerHTML = `
+        item.innerHTML = `
       <span class="project-marker">$</span>
       <span class="project-name">${escapeHtml(project.name)}</span>
       <span class="project-count">${project.tasks.length}</span>
     `;
 
-          item.onclick = () => {
-            state.activeProjectId = project.id;
-            setStatus(`switched project: ${project.name}`);
-            render();
-          };
+        item.onclick = () => {
+          state.activeProjectId = project.id;
+          setStatus(`switched project: ${project.name}`);
+          render();
+        };
 
-          projectList.appendChild(item);
-        });
-      }
+        projectList.appendChild(item);
+      });
+    }
 
     function renderCategories() {
       const categoryList = document.getElementById("categoryList");
@@ -1280,10 +1292,9 @@
           card.innerHTML = `
             <div class="task-title">${escapeHtml(task.title)}</div>
 
-            ${
-              task.description
-                ? `<div class="task-desc">${escapeHtml(task.description)}</div>`
-                : ""
+            ${task.description
+              ? `<div class="task-desc">${escapeHtml(task.description)}</div>`
+              : ""
             }
 
             <div class="task-meta">
@@ -1291,13 +1302,12 @@
                 ${escapeHtml(category.name)}
               </span>
 
-              ${
-                task.dueDate
-                  ? `<span class="due ${isOverdue(task) ? "overdue" : ""}">
-                      ${escapeHtml(task.dueDate)}
+              ${task.dueDate
+              ? `<span class="due ${isOverdue(task) ? "overdue" : ""}">
+                      <span class="due-date">${escapeHtml(task.dueDate)}</span>
                     </span>`
-                  : `<span class="due">none</span>`
-              }
+              : `<span class="due">none</span>`
+            }
             </div>
 
             <div class="task-actions">
@@ -1536,24 +1546,24 @@
     }
 
     function moveTask(taskId, status) {
-        const project = getActiveProject();
-        const task = project.tasks.find(task => task.id === taskId);
+      const project = getActiveProject();
+      const task = project.tasks.find(task => task.id === taskId);
 
-        if (!task) {
-          setStatus("move failed: task not found");
-          return;
-        }
-
-        const oldStatus = task.status;
-        task.status = status;
-
-        if (status == `done`){
-          setStatus(`moved task: ${task.title} [${oldStatus} → ${status}] -- good job!`);
-        } else {
-          setStatus(`moved task: ${task.title} [${oldStatus} → ${status}]`);
-        }
-        render();
+      if (!task) {
+        setStatus("move failed: task not found");
+        return;
       }
+
+      const oldStatus = task.status;
+      task.status = status;
+
+      if (status == `done`) {
+        setStatus(`moved task: ${task.title} [${oldStatus} → ${status}] -- good job!`);
+      } else {
+        setStatus(`moved task: ${task.title} [${oldStatus} → ${status}]`);
+      }
+      render();
+    }
 
     function deleteTask(taskId) {
       const project = getActiveProject();
@@ -1637,7 +1647,7 @@
         .replaceAll("'", "&#039;");
     }
 
-  function makeDitherGradientDataUrl(hex, options = {}) {
+    function makeDitherGradientDataUrl(hex, options = {}) {
       const pixelSize = options.pixelSize ?? 2;      // bigger = chunkier pixels
       const fadeWidth = options.fadeWidth ?? 120;    // how far fade travels right
       const height = options.height ?? 160;          // strip height, repeats vertically
@@ -1705,26 +1715,26 @@
       };
     }
 
-  function cssColorToRgb(color) {
-    const div = document.createElement("div");
-    div.style.color = color;
-    document.body.appendChild(div);
+    function cssColorToRgb(color) {
+      const div = document.createElement("div");
+      div.style.color = color;
+      document.body.appendChild(div);
 
-    const computed = getComputedStyle(div).color;
-    div.remove();
+      const computed = getComputedStyle(div).color;
+      div.remove();
 
-    const match = computed.match(/\d+/g);
+      const match = computed.match(/\d+/g);
 
-    if (!match) return null;
+      if (!match) return null;
 
-    return {
-      r: Number(match[0]),
-      g: Number(match[1]),
-      b: Number(match[2])
-    };
-  }
+      return {
+        r: Number(match[0]),
+        g: Number(match[1]),
+        b: Number(match[2])
+      };
+    }
 
-  function renderCurrentProjectName() {
+    function renderCurrentProjectName() {
       const project = getActiveProject();
       const button = document.getElementById("currentProjectTitle");
 
@@ -1750,10 +1760,10 @@
     }
 
     function deactivateProjectSwitch() {
-        projectSwitchActive = false;
-        projectNumberBuffer = "";
-        renderCurrentProjectName();
-      }
+      projectSwitchActive = false;
+      projectNumberBuffer = "";
+      renderCurrentProjectName();
+    }
 
     function switchProjectByOffset(offset) {
       const currentIndex = state.projects.findIndex(project => project.id === state.activeProjectId);
@@ -1767,75 +1777,75 @@
     }
 
     function switchProjectByNumber(numberString) {
-        const projectNumber = Number(numberString);
+      const projectNumber = Number(numberString);
 
-        if (!Number.isInteger(projectNumber)) return;
+      if (!Number.isInteger(projectNumber)) return;
 
-        const index = projectNumber - 1;
+      const index = projectNumber - 1;
 
-        if (index < 0 || index >= state.projects.length) {
-          setStatus(`no project #${projectNumber}`);
-          projectNumberBuffer = "";
-          renderCurrentProjectName();
+      if (index < 0 || index >= state.projects.length) {
+        setStatus(`no project #${projectNumber}`);
+        projectNumberBuffer = "";
+        renderCurrentProjectName();
+        return;
+      }
+
+      state.activeProjectId = state.projects[index].id;
+      setStatus(`switched project: ${state.projects[index].name}`);
+
+      deactivateProjectSwitch();
+      render();
+    }
+
+    document.addEventListener("keydown", event => {
+      if (!projectSwitchActive) return;
+
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        event.preventDefault();
+        switchProjectByOffset(-1);
+        return;
+      }
+
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        event.preventDefault();
+        switchProjectByOffset(1);
+        return;
+      }
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        deactivateProjectSwitch();
+        setStatus("project switch cancelled");
+        return;
+      }
+
+      if (/^\d$/.test(event.key)) {
+        event.preventDefault();
+
+        projectNumberBuffer += event.key;
+        renderCurrentProjectName();
+        return;
+      }
+
+      if (event.key === "Backspace") {
+        event.preventDefault();
+
+        projectNumberBuffer = projectNumberBuffer.slice(0, -1);
+        renderCurrentProjectName();
+        return;
+      }
+
+      if (event.key === "Enter") {
+        event.preventDefault();
+
+        if (projectNumberBuffer) {
+          switchProjectByNumber(projectNumberBuffer);
           return;
         }
-
-        state.activeProjectId = state.projects[index].id;
-        setStatus(`switched project: ${state.projects[index].name}`);
 
         deactivateProjectSwitch();
-        render();
       }
-      
-    document.addEventListener("keydown", event => {
-        if (!projectSwitchActive) return;
-
-        if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
-          event.preventDefault();
-          switchProjectByOffset(-1);
-          return;
-        }
-
-        if (event.key === "ArrowRight" || event.key === "ArrowDown") {
-          event.preventDefault();
-          switchProjectByOffset(1);
-          return;
-        }
-
-        if (event.key === "Escape") {
-          event.preventDefault();
-          deactivateProjectSwitch();
-          setStatus("project switch cancelled");
-          return;
-        }
-
-        if (/^\d$/.test(event.key)) {
-          event.preventDefault();
-
-          projectNumberBuffer += event.key;
-          renderCurrentProjectName();
-          return;
-        }
-
-        if (event.key === "Backspace") {
-          event.preventDefault();
-
-          projectNumberBuffer = projectNumberBuffer.slice(0, -1);
-          renderCurrentProjectName();
-          return;
-        }
-
-        if (event.key === "Enter") {
-          event.preventDefault();
-
-          if (projectNumberBuffer) {
-            switchProjectByNumber(projectNumberBuffer);
-            return;
-          }
-
-          deactivateProjectSwitch();
-        }
-      });
+    });
 
     document.getElementById("projectInput").addEventListener("keydown", event => {
       if (event.key === "Enter") addProject();
@@ -1862,4 +1872,5 @@
     setStatus("ready");
   </script>
 </body>
+
 </html>
